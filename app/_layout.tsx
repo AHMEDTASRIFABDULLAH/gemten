@@ -37,10 +37,11 @@ export default function RootLayout() {
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
         <Stack>
           <Stack.Screen name="index" options={{ headerShown: false }} />
-          <Stack.Screen name="birth" options={{ headerShown: false }} />{" "}
+          <Stack.Screen name="birth" options={{ headerShown: false }} />
           <Stack.Screen name="number" options={{ headerShown: false }} />
           <Stack.Screen name="username" options={{ headerShown: false }} />
           <Stack.Screen name="password" options={{ headerShown: false }} />
+          <Stack.Screen name="setprofile" options={{ headerShown: false }} />
           <Stack.Screen name="+not-found" />
         </Stack>
         <StatusBar style="auto" />

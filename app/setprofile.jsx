@@ -3,15 +3,16 @@ import {
   Text,
   SafeAreaView,
   StyleSheet,
-  TextInput,
-  TouchableOpacity,
   Image,
+  TouchableOpacity,
 } from "react-native";
 import React from "react";
 import globalStyles from "../globalcss/styles";
-import btnIcon from "../assets/login_icons/icon.png";
+import profileIcon from "../assets/login_icons/profile_Icon.png";
+import uploadBox from "../assets/login_icons/upload_box.png";
+import btnSmallIcon from "../assets/login_icons/btn_small-icon.png";
 import { useNavigation } from "expo-router";
-const Password = () => {
+const SetProfile = () => {
   const navigation = useNavigation();
   const handelNavigate = () => {
     navigation.navigate("setprofile");
@@ -26,23 +27,25 @@ const Password = () => {
             <View style={styles.progressChaild}></View>
           </View>
         </View>
-        {/* input title text  */}
-        <Text style={styles.inputTitleText}>Select a password</Text>
-        <View style={styles.userNameInputContainer}>
-          <Text style={styles.inputText}>Password</Text>
-          <TextInput
-            placeholder=". . . . . . . . ."
-            style={styles.passwordInput}
-            secureTextEntry={true}
-          />
-
-          <Text style={styles.strong}>strong</Text>
+        {/*  title text  */}
+        <Text style={styles.titleText}>Select a profile photo</Text>
+        <View style={styles.imageContainer}>
+          <Image source={profileIcon} />
+        </View>
+        <View style={styles.uploadImageContainer}>
+          <Image source={uploadBox} />
         </View>
         {/* button container */}
         <View style={styles.buttonContainer}>
           <TouchableOpacity onPress={handelNavigate} style={styles.nextButton}>
-            <Text style={styles.buttonText}>Next</Text>
-            <Image source={btnIcon} />
+            <Text style={styles.buttonText}>Done</Text>
+            {/* <Image source={btnIcon} /> */}
+          </TouchableOpacity>
+        </View>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.skipButton}>
+            <Text style={styles.buttonText}>Skip</Text>
+            <Image style={styles.smallbtnImage} source={btnSmallIcon} />
           </TouchableOpacity>
         </View>
       </View>
@@ -66,43 +69,28 @@ const styles = StyleSheet.create({
     backgroundColor: "#D9D9D9",
   },
   progressChaild: {
-    width: 250,
+    width: "100%",
     backgroundColor: "#76AEEE",
     height: "100%",
     borderRadius: 12,
   },
-  // input title text
-  inputTitleText: {
+  //  title text
+  titleText: {
     fontSize: 14,
     fontWeight: 700,
     color: "black",
-    paddingTop: 30,
+    paddingTop: 32,
     paddingBottom: 10,
+    textAlign: "center",
   },
-  //   userNameInputContainer
-  userNameInputContainer: {
-    marginTop: 29,
+  //   image container
+  imageContainer: {
+    alignItems: "center",
+    marginTop: 32,
   },
-  inputText: {
-    fontSize: 14,
-    fontWeight: 400,
-    color: "#000000",
-    marginBottom: 5,
-  },
-  passwordInput: {
-    height: 63,
-    backgroundColor: "#FFFFFF",
-    borderRadius: 12,
-    paddingLeft: 22,
-    paddingBottom: 10,
-    fontWeight: 400,
-    color: "#646464",
-    fontSize: 30,
-  },
-  strong: {
-    marginTop: 8,
-    fontSize: 10,
-    color: "#000000",
+  uploadImageContainer: {
+    alignItems: "center",
+    marginTop: 54,
   },
   //   button container
   buttonContainer: {
@@ -112,14 +100,12 @@ const styles = StyleSheet.create({
   //   next button
   nextButton: {
     backgroundColor: "#FFFFFF",
-    marginTop: 247,
+    marginTop: 200,
     borderRadius: 77,
     height: 54,
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
-    paddingLeft: 69,
-    paddingRight: 32,
+    justifyContent: "center",
     borderColor: "#3391FC",
     borderWidth: 1,
   },
@@ -127,5 +113,16 @@ const styles = StyleSheet.create({
     fontWeight: 600,
     color: "#000000",
   },
+  smallbtnImage: {
+    marginTop: 4,
+  },
+  skipButton: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 8,
+    marginTop: 19,
+    marginLeft: 15,
+  },
 });
-export default Password;
+export default SetProfile;
