@@ -29,7 +29,7 @@ const UserName = () => {
         {/* input title text  */}
         <Text style={styles.inputTitleText}>Select your username</Text>
         <View style={styles.userNameInputContainer}>
-          <Text style={styles.inputText}>Phone Number</Text>
+          <Text style={styles.inputText}>Username</Text>
           <TextInput placeholder="@" style={styles.useNameInput} />
           <Text style={styles.exampleName}>example: @yuki_takahashi</Text>
         </View>
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#D9D9D9",
   },
   progressChaild: {
-    width: 193,
+    width: 220,
     backgroundColor: "#76AEEE",
     height: "100%",
     borderRadius: 12,
