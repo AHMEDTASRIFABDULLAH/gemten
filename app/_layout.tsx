@@ -9,7 +9,6 @@ import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 import "react-native-reanimated";
-
 import { useColorScheme } from "@/hooks/useColorScheme";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -42,6 +41,7 @@ export default function RootLayout() {
           <Stack.Screen name="username" options={{ headerShown: false }} />
           <Stack.Screen name="password" options={{ headerShown: false }} />
           <Stack.Screen name="setprofile" options={{ headerShown: false }} />
+          <Stack.Screen name="continue" options={{ headerShown: false }} />
           <Stack.Screen name="+not-found" />
         </Stack>
         <StatusBar style="auto" />

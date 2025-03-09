@@ -15,7 +15,7 @@ import { useNavigation } from "expo-router";
 const SetProfile = () => {
   const navigation = useNavigation();
   const handelNavigate = () => {
-    navigation.navigate("setprofile");
+    navigation.navigate("continue");
   };
   return (
     <SafeAreaView style={globalStyles.safeArea}>
@@ -39,7 +39,6 @@ const SetProfile = () => {
         <View style={styles.buttonContainer}>
           <TouchableOpacity onPress={handelNavigate} style={styles.nextButton}>
             <Text style={styles.buttonText}>Done</Text>
-            {/* <Image source={btnIcon} /> */}
           </TouchableOpacity>
         </View>
         <View style={styles.buttonContainer}>
